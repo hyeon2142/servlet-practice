@@ -1,16 +1,15 @@
-<%@page import="com.douzone.guestbook01.dao.GuestbookDao"%>
-<%@page import="com.douzone.guestbook01.vo.GuestbookVo"%>
+<%@page import="com.douzone.guestbook02.dao.GuestbookDao"%>
+<%@page import="com.douzone.guestbook02.vo.GuestbookVo"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>방명록</title>
 </head>
 <body>
-	<form action="add.jsp" method="post">
+	<form action="/guestbook02/gb?action=add" method="post">
 		<table border=1 width=500>
 			<tr>
 				<td>이름</td>
@@ -26,8 +25,8 @@
 			</tr>
 		</table>
 	</form>
-	<br>
 
+	<br>
 	<%
 	List<GuestbookVo> list = new GuestbookDao().findAll();
 	for(GuestbookVo vo : list) {
@@ -37,7 +36,7 @@
 			<td><%=vo.getNo()%></td>
 			<td><%=vo.getName() %></td>
 			<td><%=vo.getReg_date() %></td>
-			<td><a href="deleteform.jsp?no=<%=vo.getNo()%>&name=<%=vo.getName()%>">삭제</a></td>
+			<td><a href="/guestbook02/gb?action=deleteform&no=<%=vo.getNo()%>">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan=4><%=vo.getMessage() %></td>
@@ -46,5 +45,6 @@
 	<%
 	}
 	%>
+
 </body>
 </html>

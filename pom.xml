@@ -35,7 +35,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>helloweb</finalName>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<resources>
 			<resource>
@@ -70,8 +69,7 @@
 					<warSourceDirectory>src/main/webapp</warSourceDirectory>
 					<failOnMissingWebXml>true</failOnMissingWebXml>
 				</configuration>
-			</plugin>
-			
+			</plugin>		
 		</plugins>
 	</build>
 
@@ -79,5 +77,7 @@
 		<module>helloweb</module>
 		<module>emaillist01</module>
 		<module>guestbook01</module>
+		<module>emaillist02</module>
+		<module>guestbook02</module>
 	</modules>
 </project>
